@@ -75,4 +75,12 @@ class MinecraftVersionTest {
             previous = version
         }
     }
+
+    @Test
+    fun `cannot add versions`() {
+        assertThrows<IllegalStateException> {
+            val update = MinecraftVersions.BUZZY_BEES
+            update.version(7, 5)
+        }
+    }
 }
